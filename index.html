@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TEZAS Symposium</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/alpinejs" defer></script>
+    <style>
+        #container {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+        }
+        
+        .glitch {
+            color: white;
+            font-size: 6em;
+            letter-spacing: .3em;
+            padding: 0;
+            margin: 0;
+            animation: glitch 1s infinite;
+            position: relative;
+        }
+        
+        .glitch::before {
+            position: absolute;
+            content: attr(data-text);
+            top: 0;
+            left: 2px;
+            width: 100%;
+            text-shadow: -2px 0 red;
+            animation: glitch-mirror 5s infinite;
+        }
+        
+        .glitch::after {
+            position: absolute;
+            content: attr(data-text);
+            top: 0;
+            left: -2px;
+            width: 100%;
+            text-shadow: -2px 0 greenyellow, 2px 2px red;
+            animation: glitch-mirror 1s infinite;
+        }
+        
+        @keyframes glitch {
+            0% { transform: skew(-3deg); }
+            10% { transform: skew(1deg); }
+            20% { transform: skew(2deg); }
+            30% { transform: skew(4deg); }
+            40% { transform: skew(4deg); }
+            50% { transform: skew(5deg); }
+            60% { transform: skew(-2deg); }
+            70% { transform: skew(0deg); }
+            80% { transform: skew(4deg); }
+            90% { transform: skew(2deg); }
+            100% { transform: skew(3deg); }
+        }
+        
+        @keyframes glitch-mirror {
+            0% { clip-path: inset(4% 0%); transform: skew(0.81deg); }
+            5% { clip-path: inset(38% 0%); transform: skew(0.28deg); }
+            10% { clip-path: inset(163% 0%); transform: skew(0.67deg); }
+            15% { clip-path: inset(31% 0%); transform: skew(0.07deg); }
+            20% { clip-path: inset(168% 0%); transform: skew(0.53deg); }
+            25% { clip-path: inset(130% 0%); transform: skew(0.48deg); }
+            30% { clip-path: inset(92% 0%); transform: skew(0.68deg); }
+            35% { clip-path: inset(43% 0%); transform: skew(0.7deg); }
+            40% { clip-path: inset(18% 0%); transform: skew(0.5deg); }
+            45% { clip-path: inset(180% 0%); transform: skew(0.21deg); }
+            50% { clip-path: inset(71% 0%); transform: skew(0.56deg); }
+            55% { clip-path: inset(182% 0%); transform: skew(0.55deg); }
+            60% { clip-path: inset(66% 0%); transform: skew(0.65deg); }
+            65% { clip-path: inset(66% 0%); transform: skew(0.77deg); }
+            70% { clip-path: inset(43% 0%); transform: skew(0.56deg); }
+            75% { clip-path: inset(148% 0%); transform: skew(0.93deg); }
+            80% { clip-path: inset(169% 0%); transform: skew(0.46deg); }
+            85% { clip-path: inset(166% 0%); transform: skew(0.98deg); }
+            90% { clip-path: inset(53% 0%); transform: skew(0.81deg); }
+            95% { clip-path: inset(157% 0%); transform: skew(0.68deg); }
+            100% { clip-path: inset(182% 0%); transform: skew(0.22deg); }
+        }
+    </style>
+</head>
+<body style="background-color: black;">
+    <h1 class="glitch" data-text="DHURKESH" style="text-align: center;">DHURKESH</h1>
+</body>
+</html>
